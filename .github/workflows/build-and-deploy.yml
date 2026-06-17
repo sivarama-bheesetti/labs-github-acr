@@ -31,5 +31,6 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
+          context: .
           push: true
           tags: ${{ secrets.ACR_SERVER }}/${{ env.IMAGE_REPOSITORY_NAME }}:${{ env.IMAGE_TAG }}
